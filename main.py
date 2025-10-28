@@ -17,7 +17,13 @@ from state import GameState
 
 def info() -> typing.Dict:
     print("INFO")
-    return {"apiversion": "1", "author": "", "color": "#888888", "head": "default", "tail": "default"}
+    return {
+        "apiversion": "1",
+        "author": "IT",
+        "color": "#888888",
+        "head": "earmuffs",
+        "tail": "coffee"
+    }
 
 
 def start(game_state: typing.Dict):
@@ -68,4 +74,3 @@ if __name__ == "__main__":
     from server import run_server
 
     run_server({"info": info, "start": start, "move": move, "end": end})
-

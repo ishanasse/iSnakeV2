@@ -34,7 +34,7 @@ def run_server(handlers: typing.Dict):
         return response
 
     host = "0.0.0.0"
-    port = int(os.environ.get("PORT", "8888"))
+    port = int(os.environ.get("PORT", "5000"))
     logging.getLogger("werkzeug").setLevel(logging.ERROR)
     print(f"\nRunning Battlesnake at http://{host}:{port}")
     app.run(host=host, port=port)
