@@ -19,7 +19,7 @@ class Weights:
 
 
 # Core tuning knobs; override via environment variables to experiment without code edits.
-LOW_HEALTH = int(os.environ.get("LOW_HEALTH", 60))  # HP threshold that marks us as hungry.
+LOW_HEALTH = int(os.environ.get("LOW_HEALTH", 35))  # HP threshold that marks us as hungry.
 W_AREA = float(os.environ.get("W_AREA", 3.5))  # Weight for accessible space (flood-fill area).
 W_FOOD = float(os.environ.get("W_FOOD", 45.0))  # Food incentive when LOW_HEALTH is met.
 W_CORRIDOR = float(os.environ.get("W_CORRIDOR", 3.0))  # Penalty for low-degree tunnel positions.
@@ -33,7 +33,7 @@ W_VORONOI = float(os.environ.get("W_VORONOI", 0.8))  # Bonus for territory contr
 TOPK_RANDOM = int(os.environ.get("TOPK_RANDOM", 2))  # Candidate count kept for tie randomisation.
 TIE_MARGIN = float(os.environ.get("TIE_MARGIN", 0.02))  # Normalised score gap treated as a tie.
 SEED = int(os.environ.get("SEED", 42))  # Base deterministic seed (mixed with game state).
-FALLBACK_MS = int(os.environ.get("FALLBACK_MS", 360))  # Time budget per move before falling back.
+FALLBACK_MS = int(os.environ.get("FALLBACK_MS", 250))  # Time budget per move before falling back.
 LOOKAHEAD_DEPTH = int(os.environ.get("LOOKAHEAD_DEPTH", 2))  # Beam search ply depth (0-2 supported).
 BEAM_WIDTH = int(os.environ.get("BEAM_WIDTH", 3))  # States retained per layer of the beam.
 OPP_TOPK = int(os.environ.get("OPP_TOPK", 2))  # Opponent move options considered at each branch.
